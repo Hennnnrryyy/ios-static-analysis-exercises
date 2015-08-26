@@ -7,11 +7,16 @@
 //
 
 #import "BLCAppDelegate.h"
+#import <Fabric/Fabric.h>
+#import <Crashlytics/Crashlytics.h>
+
 
 @implementation BLCAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+   [Fabric with:@[[Crashlytics class]]];
+    [Fabric with:@[CrashlyticsKit]];
     // Override point for customization after application launch.
     return YES;
 }
